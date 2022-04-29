@@ -1,13 +1,14 @@
-import GalleryItem from "../GalleryItem/GalleryItem";
+import GalleryItem from '../GalleryItem/GalleryItem';
+import './GalleryList.css';
 
-function GalleryList(galleryList) {
+function GalleryList({galleryList}) {
   return (
-      <ul>
-          {galleryList.map((photo) => {
-              return <GalleryItem key={photo.id} photo={photo} />
-          })}
-      </ul>
-  )
+    <ul id="imagesContainer">
+      {galleryList.map((image) => {
+        return <GalleryItem key={image.id} image={image} />;
+      })}
+    </ul>
+  );
 }
 
 export default GalleryList;
