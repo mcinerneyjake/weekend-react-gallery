@@ -9,6 +9,7 @@ function App() {
   }, []);
 
   const [galleryList, setGalleryList] = useState([]);
+  const [likeNumber, setLikeNumber] = useState([]);
 
   const getGallery = () => {
     axios({
@@ -16,13 +17,26 @@ function App() {
       url: '/gallery',
     })
       .then((response) => {
-        console.log(response.data);
         setGalleryList(response.data);
       })
       .catch((error) => {
         console.log('Error in /gallery GET route:', error);
       });
   };
+
+  // const addLikesToGallery = () => {
+  //   axios({
+  //     method: 'PUT',
+  //     url: '/gallery',
+  //   })
+  //     .then((response) => {
+  //       console.log(response);
+  //       getGallery();
+  //     })
+  //     .catch((error) => {
+  //       console.log('Error in /gallery PUT route:', error);
+  //     });
+  // };
 
   return (
     <div className='App'>
