@@ -1,8 +1,13 @@
-function GalleryItem({image}) {
+import './GalleryItem.css';
+
+function GalleryItem({ image }) {
   return (
-    <li>
-      {image.path} {image.description}
-    </li>
+    <div>
+      <li>
+        <img src={image.path} id='image'></img>
+      </li>
+      <p>{image.description}</p>
+    </div>
   );
 }
 
