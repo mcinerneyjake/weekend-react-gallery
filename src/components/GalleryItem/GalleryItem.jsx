@@ -1,7 +1,7 @@
-function GalleryItem(photo) {
+function GalleryItem({image}) {
   return (
     <li>
-      {photo.title} {photo.description}
+      {image.path} {image.description}
     </li>
   );
 }
