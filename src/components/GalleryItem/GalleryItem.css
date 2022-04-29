@@ -1,3 +1,10 @@
+#imageContainer {
+  background-color: rgb(24, 119, 72);
+  height: auto;
+  width: 350px;
+  justify-self: center;
+}
+
 #image {
   height: 200px;
   width: 200px;

@@ -3,7 +3,7 @@ import './GalleryList.css';
 
 function GalleryList({galleryList}) {
   return (
-    <ul id="imageContainer">
+    <ul id="imagesContainer">
       {galleryList.map((image) => {
         return <GalleryItem key={image.id} image={image} />;
       })}
