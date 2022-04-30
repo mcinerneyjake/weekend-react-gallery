@@ -1,24 +1,26 @@
 import { useState } from 'react';
 import './GalleryItem.css';
 
-function GalleryItem({ image }) {
-  let content;
-  
-  function flipImageOnClick() {
-    if (image.id) {
-      content = image.description;
+function GalleryItem({ image, updateLikesOnGallery }) {
+  const [isImageSideUp, setIsImageSideUp] = useState(true);
+
+  const flipImage = () => {
+    setIsImageSideUp(!isImageSideUp);
+    console.log(isImageSideUp);
+  };
+
+  const renderImage = () => {
+    if (isImageSideUp) {
+      return <img src={image.path} id='image'></img>;
     } else {
-      content = image.path;
+      return <p>{image.description}</p>;
     }
-  }
+  };
 
   return (
-    <div id='imageContainer'>
-      <li>
-        <img src={image.path} id='image' onClick={flipImageOnClick}></img>
-      </li>
-      <p>{image.description}</p>
-      <button>Like</button>
+    <div onClick={flipImage} id='imageContainer'>
+      <li>{renderImage()}</li>
+      <button onClick={() => updateLikesOnGallery(image.likes)}>Like</button>
       <p>{image.likes}</p>
     </div>
   );

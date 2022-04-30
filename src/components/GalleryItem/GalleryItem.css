@@ -1,8 +1,11 @@
 #imageContainer {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(24, 119, 72);
-  height: auto;
+  height: 300px;
   width: 350px;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #image {

@@ -24,26 +24,25 @@ function App() {
       });
   };
 
-  // const addLikesToGallery = () => {
-  //   axios({
-  //     method: 'PUT',
-  //     url: '/gallery',
-  //   })
-  //     .then((response) => {
-  //       console.log(response);
-  //       getGallery();
-  //     })
-  //     .catch((error) => {
-  //       console.log('Error in /gallery PUT route:', error);
-  //     });
-  // };
+  const updateLikesOnGallery = (gallery) => {
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${gallery.id}`,
+    })
+      .then((response) => {
+        getGallery();
+      })
+      .catch((error) => {
+        console.log('Error in /gallery PUT route:', error);
+      });
+  };
 
   return (
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Gallery of Awesome Photos</h1>
       </header>
-      <GalleryList galleryList={galleryList} />
+      <GalleryList galleryList={galleryList} updateLikesOnGallery={updateLikesOnGallery} />
     </div>
   );
 }
