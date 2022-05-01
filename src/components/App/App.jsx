@@ -27,7 +27,7 @@ function App() {
   const updateLikesOnGallery = (gallery) => {
     axios({
       method: 'PUT',
-      url: `/gallery/like/${gallery.id}`,
+      url: `/gallery/like/${gallery}`,
     })
       .then((response) => {
         getGallery();

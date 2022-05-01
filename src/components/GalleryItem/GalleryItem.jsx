@@ -17,10 +17,15 @@ function GalleryItem({ image, updateLikesOnGallery }) {
     }
   };
 
+  const handleLikes = (e) => {
+    e.preventDefault();
+    updateLikesOnGallery(image.id);
+  };
+
   return (
-    <div onClick={flipImage} id='imageContainer'>
-      <li>{renderImage()}</li>
-      <button onClick={() => updateLikesOnGallery(image.likes)}>Like</button>
+    <div id='imageContainer'>
+      <li onClick={flipImage}>{renderImage()}</li>
+      <button onClick={handleLikes}>Like</button>
       <p>{image.likes}</p>
     </div>
   );
